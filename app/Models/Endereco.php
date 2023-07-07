@@ -29,6 +29,11 @@ class Endereco extends Model
         return $this->hasOne(Requerente::class, 'endereco_id');
     }
 
+    public function beneficiario()
+    {
+        return $this->hasOne(Beneficiario::class, 'endereco_id');
+    }
+
     public function setAtributes($input)
     {
         $this->cep = $input['cep'];

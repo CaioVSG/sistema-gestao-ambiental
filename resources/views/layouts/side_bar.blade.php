@@ -138,6 +138,11 @@
                                         Dashboard Estatístico
                                     </a>
                                 </li>
+                                <li class="mb-2 item-align">
+                                    <a href="{{route('beneficiarios.index')}}">
+                                        Beneficiários
+                                    </a>
+                                </li>
                                 
                                 <li class="mb-2 @if(request()->routeIs('requerimentos*') || request()->routeIs('boletos*') || request()->routeIs('documentos*') || request()->routeIs('valores*')) active @endif">
                                     <button href="#licenciamentoSubmenu" data-toggle="collapse" @if(request()->routeIs('requerimentos*') || request()->routeIs('boletos*') || request()->routeIs('documentos*') || request()->routeIs('valores*')) aria-expanded="true" @else aria-expanded="false" @endif class="btn btn-toggle d-flex justify-content-between w-100">
