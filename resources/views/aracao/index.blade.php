@@ -82,10 +82,10 @@
                                                 <tbody>
                                                     @foreach ($aracao as $item)
                                                         <tr>
-                                                            <td>{{ $item->beneficiario->nome }}</td>
-                                                            <td>{{ $item->beneficiario->codigo }}</td>
+                                                            <td>{{ $item->beneficiario->nome ?? '-' }}</td>
+                                                            <td>{{ $item->beneficiario->codigo ?? '-' }}</td>
                                                             <td>{{ $item->cultura }}</td>
-                                                            <td>{{ $item->beneficiario->Endereco->comunidade }}</td>
+                                                            <td>{{ $item->beneficiario->Endereco->comunidade ?? '-' }}</td>
                                                             <td>{{ $item->quantidade_ha }}</td>
                                                             <td>{{ $item->quantidade_horas }}</td>
                                                             <td>
@@ -165,7 +165,7 @@
                                     <form id="deletar-aracao-form-{{$item->id}}" method="POST" action="{{route('aracao.destroy', ['id' => $item->id])}}">
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE">
-                                        Tem certeza que deseja deletar o aração do beneficiário {{$item->beneficiario->nome}}?
+                                        Tem certeza que deseja deletar o aração do beneficiário {{$item->beneficiario->nome ?? '-' }}?
                                     </form>
                                 </div>
                                 <div class="modal-footer">
